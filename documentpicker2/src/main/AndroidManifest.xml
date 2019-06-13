@@ -1,16 +1,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.mahesh.documentpicker2">
-    <provider
-        android:name="android.support.v4.content.FileProvider"
-        android:authorities="{id}.provider"
-        android:exported="false"
-        android:grantUriPermissions="true"
-        tools:replace="android:authorities"
-        tools:ignore="WrongManifestParent">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/file_paths_temp"
-            tools:replace="android:resource" />
-    </provider>
+
+    <application>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.documentpicker2.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:ignore="WrongManifestParent"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths_temp"
+                tools:replace="android:resource" />
+        </provider>
+    </application>
 </manifest>
